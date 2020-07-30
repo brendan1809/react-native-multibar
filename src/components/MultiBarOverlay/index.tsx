@@ -9,7 +9,10 @@ const COMMON_DEGREES = 180;
 
 type Props = Pick<MultiBarPassThroughParams, "params">;
 
-export const MultiBarOverlay: React.FC<Props> = ({ params }) => {
+export const MultiBarOverlay: React.FC<Props> = ({
+  params,
+  checkParamsMovement,
+}) => {
   const {
     data,
     extrasVisible,
@@ -72,7 +75,7 @@ export const MultiBarOverlay: React.FC<Props> = ({ params }) => {
   // close it when the bottom tab bar is close
   React.useEffect(() => {
     setExtrasVisible(extrasVisible && !extrasVisible);
-  }, [params]);
+  }, [checkParamsMovement]);
 
   const itemsList = React.useMemo(
     () =>

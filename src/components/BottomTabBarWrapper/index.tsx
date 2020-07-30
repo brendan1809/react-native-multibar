@@ -9,7 +9,7 @@ type Props = Pick<MultiBarPassThroughParams, "params">;
 
 export const BottomTabBarWrapper: React.FC<Props> = ({ children, params }) => (
   <View pointerEvents="box-none" style={styles.container}>
-    <MultiBarOverlay params={() => params} />
+    <MultiBarOverlay params={params} checkParamsMovement={() => params} />
     {children}
   </View>
 );
